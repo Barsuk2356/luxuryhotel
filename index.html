@@ -328,14 +328,229 @@
         font-size: 14px;
       }
 
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .gallery img {
+        width: 100%;
+        aspect-ratio: 3/2;
+        object-fit: cover;
+        border-radius: 12px;
+        border: 1px solid var(--line);
+        display: block;
+      }
+
+      .dining-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .dining-card {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        overflow: hidden;
+        background: var(--card);
+      }
+
+      .dining-card img {
+        width: 100%;
+        aspect-ratio: 4/3;
+        object-fit: cover;
+        display: block;
+      }
+
+      .dining-card .room-body h3 {
+        margin: 0;
+      }
+
+      .wellness-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .wellness-item {
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 16px;
+        background: rgba(16, 13, 10, 0.84);
+      }
+
+      .wellness-item h4 {
+        margin: 0 0 8px;
+        font-size: 18px;
+      }
+
+      .wellness-item p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .offers {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .offer {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 16px;
+        background: linear-gradient(180deg, rgba(35, 28, 20, 0.9), rgba(16, 12, 9, 0.88));
+      }
+
+      .offer h4 {
+        margin: 0 0 8px;
+        font-size: 18px;
+      }
+
+      .offer p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .testimonials {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .review {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 16px;
+        background: rgba(19, 15, 12, 0.84);
+      }
+
+      .review blockquote {
+        margin: 0;
+        color: #eadfcf;
+        line-height: 1.55;
+      }
+
+      .review .author {
+        margin-top: 10px;
+        color: var(--gold-soft);
+        font-size: 14px;
+      }
+
+      .timeline {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .timeline-step {
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 14px;
+        background: rgba(15, 13, 11, 0.8);
+      }
+
+      .timeline-step strong {
+        display: block;
+        color: var(--gold-soft);
+        margin-bottom: 6px;
+      }
+
+      .timeline-step p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .events-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .event {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 18px;
+        background: rgba(18, 14, 10, 0.86);
+      }
+
+      .event h4 {
+        margin: 0 0 8px;
+      }
+
+      .event p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .faq {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      details {
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        background: rgba(18, 14, 11, 0.82);
+        padding: 12px 14px;
+      }
+
+      summary {
+        cursor: pointer;
+        color: var(--gold-soft);
+        font-weight: 600;
+      }
+
+      details p {
+        margin: 10px 0 0;
+        color: var(--muted);
+      }
+
+      .location-card {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 16px;
+        background: rgba(16, 12, 9, 0.84);
+      }
+
+      .location-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        align-items: stretch;
+      }
+
+      .location-card iframe {
+        width: 100%;
+        min-height: 280px;
+        border: 0;
+        border-radius: 12px;
+      }
+
       @media (max-width: 980px) {
         .hero-grid,
-        .rooms {
+        .rooms,
+        .dining-grid,
+        .wellness-grid,
+        .offers,
+        .testimonials {
           grid-template-columns: 1fr;
         }
 
         .services {
           grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .gallery,
+        .timeline {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .location-grid,
+        .events-grid {
+          grid-template-columns: 1fr;
         }
       }
 
@@ -345,7 +560,9 @@
         }
 
         .stats,
-        .services {
+        .services,
+        .gallery,
+        .timeline {
           grid-template-columns: 1fr;
         }
 
@@ -474,6 +691,153 @@
         </div>
       </section>
 
+      <section id="gallery">
+        <div class="wrap">
+          <h2 class="section-head">Галерея атмосферы</h2>
+          <div class="gallery">
+            <img src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?auto=format&fit=crop&w=1200&q=80" alt="Лобби отеля" />
+            <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1200&q=80" alt="Люкс с панорамным видом" />
+            <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=1200&q=80" alt="Бассейн и лаунж" />
+            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80" alt="Ресторан отеля" />
+          </div>
+        </div>
+      </section>
+
+      <section id="dining">
+        <div class="wrap">
+          <h2 class="section-head">Гастрономия</h2>
+          <div class="dining-grid">
+            <article class="dining-card">
+              <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1100&q=80" alt="Ресторан Maison D'Or" />
+              <div class="room-body">
+                <h3>Maison D'Or</h3>
+                <p>Авторская французская кухня и винная карта из 300+ позиций.</p>
+              </div>
+            </article>
+            <article class="dining-card">
+              <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1100&q=80" alt="Sky Lounge Bar" />
+              <div class="room-body">
+                <h3>Sky Lounge Bar</h3>
+                <p>Коктейльная карта от шеф-миксолога и вид на ночной город.</p>
+              </div>
+            </article>
+            <article class="dining-card">
+              <img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?auto=format&fit=crop&w=1100&q=80" alt="Private Dining" />
+              <div class="room-body">
+                <h3>Private Dining</h3>
+                <p>Закрытые гастроужины и персональный сервис для особых событий.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="wellness">
+        <div class="wrap">
+          <h2 class="section-head">SPA и Wellness программы</h2>
+          <div class="wellness-grid">
+            <article class="wellness-item">
+              <h4>Signature Detox</h4>
+              <p>3-дневная программа восстановления с диагностикой и персональным меню.</p>
+            </article>
+            <article class="wellness-item">
+              <h4>Relax Ritual</h4>
+              <p>90-минутный ритуал: ароматерапия, массаж и уход премиум-линейкой.</p>
+            </article>
+            <article class="wellness-item">
+              <h4>Morning Reset</h4>
+              <p>Йога, инфракрасная сауна и энергетический завтрак от шефа.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="offers">
+        <div class="wrap">
+          <h2 class="section-head">Специальные предложения</h2>
+          <div class="offers">
+            <article class="offer">
+              <h4>Weekend Prestige</h4>
+              <p>2 ночи в люксе + завтрак + late checkout до 16:00.</p>
+            </article>
+            <article class="offer">
+              <h4>Romantic Escape</h4>
+              <p>Украшение номера, ужин на двоих и доступ в private spa.</p>
+            </article>
+            <article class="offer">
+              <h4>Business Elite</h4>
+              <p>Трансфер, переговорная комната и fast-track check-in.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="reviews">
+        <div class="wrap">
+          <h2 class="section-head">Отзывы гостей</h2>
+          <div class="testimonials">
+            <article class="review">
+              <blockquote>
+                “Один из лучших отелей, в которых мы останавливались. Безупречный сервис и атмосфера.”
+              </blockquote>
+              <div class="author">— Анна и Максим, Москва</div>
+            </article>
+            <article class="review">
+              <blockquote>
+                “Президентский люкс великолепен. Консьерж организовал все встречи на высшем уровне.”
+              </blockquote>
+              <div class="author">— Д. Карпов, Санкт-Петербург</div>
+            </article>
+            <article class="review">
+              <blockquote>
+                “Спа-комплекс и ресторан Maison D'Or превзошли ожидания. Вернемся снова.”
+              </blockquote>
+              <div class="author">— Светлана, Казань</div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="journey">
+        <div class="wrap">
+          <h2 class="section-head">Путь гостя</h2>
+          <div class="timeline">
+            <article class="timeline-step">
+              <strong>01. Запрос</strong>
+              <p>Вы оставляете заявку на сайте или по телефону.</p>
+            </article>
+            <article class="timeline-step">
+              <strong>02. Персонализация</strong>
+              <p>Менеджер уточняет предпочтения и детали поездки.</p>
+            </article>
+            <article class="timeline-step">
+              <strong>03. Заезд</strong>
+              <p>VIP-check-in за 3 минуты и сопровождение в номер.</p>
+            </article>
+            <article class="timeline-step">
+              <strong>04. Проживание</strong>
+              <p>24/7 консьерж, рестораны, spa и персональный сервис.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="events">
+        <div class="wrap">
+          <h2 class="section-head">Мероприятия и бизнес</h2>
+          <div class="events-grid">
+            <article class="event">
+              <h4>Свадьбы и private events</h4>
+              <p>Бальный зал до 250 гостей, декор-концепция и банкет под ключ.</p>
+            </article>
+            <article class="event">
+              <h4>Конференции и форумы</h4>
+              <p>Технологичные залы, техническая поддержка и премиум-кейтеринг.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <section id="booking">
         <div class="wrap">
           <article class="booking">
@@ -488,6 +852,54 @@
               </div>
             </div>
           </article>
+        </div>
+      </section>
+
+      <section id="faq">
+        <div class="wrap">
+          <h2 class="section-head">Частые вопросы</h2>
+          <div class="faq">
+            <details>
+              <summary>Можно ли заселиться раньше 14:00?</summary>
+              <p>Да, при наличии свободного номера. Также доступна услуга гарантированного раннего заезда.</p>
+            </details>
+            <details>
+              <summary>Есть ли трансфер из аэропорта?</summary>
+              <p>Да, мы организуем индивидуальный трансфер бизнес- и представительского класса.</p>
+            </details>
+            <details>
+              <summary>Можно ли проживать с детьми?</summary>
+              <p>Да, для семей доступны смежные номера, детское меню и услуги няни по запросу.</p>
+            </details>
+            <details>
+              <summary>Работает ли SPA ежедневно?</summary>
+              <p>SPA-зона и бассейн работают ежедневно с 07:00 до 23:00, процедуры по предварительной записи.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section id="location">
+        <div class="wrap">
+          <h2 class="section-head">Локация</h2>
+          <div class="location-grid">
+            <article class="location-card">
+              <h3>Центр города, 5 минут до ключевых достопримечательностей</h3>
+              <p>
+                Адрес: Москва, ул. Петровская, 18. Рядом театры, бутики, бизнес-центры и
+                культурные пространства. Консьерж поможет с персональным маршрутом.
+              </p>
+              <p>Телефон: +7 (495) 123-45-67<br />Email: booking@aureliapalace.com</p>
+            </article>
+            <article class="location-card">
+              <iframe
+                src="https://www.openstreetmap.org/export/embed.html?bbox=37.59%2C55.74%2C37.63%2C55.77&amp;layer=mapnik"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Карта расположения отеля"
+              ></iframe>
+            </article>
+          </div>
         </div>
       </section>
     </main>
